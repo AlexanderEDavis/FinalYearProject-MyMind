@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bcl-aq-0WJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OnBoarding Controller-->
+        <scene sceneID="sya-sU-oWD">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bcl-aq-0WJ" userLabel="OnBoarding Controller" customClass="OnBoardingController" customModule="My_Mind" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LY0-fJ-nkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="147"/>
+        </scene>
+        <!--WelcomeScreenOne-->
+        <scene sceneID="Fbc-tF-xxz">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeScreenOne" id="9Rk-AX-BBW" userLabel="WelcomeScreenOne" customClass="PageOne" customModule="My_Mind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="psp-ol-usf"/>
+                        <viewControllerLayoutGuide type="bottom" id="RJy-VC-193"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ewf-hU-r3s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to My Mind" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8l-sp-ffS">
+                                <rect key="frame" x="16" y="251" width="343" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-9Q-INJ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Qas-36-ALx"/>
+                                    <barButtonItem title="Login" id="RYp-O1-dBh">
+                                        <connections>
+                                            <segue destination="zJO-Tu-UtN" kind="show" id="Vw3-lM-VqB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TW3-hg-yh2"/>
+                                    <barButtonItem title="Sign Up" id="mav-SY-GLl">
+                                        <connections>
+                                            <segue destination="VIh-NO-wmk" kind="show" id="S1r-ZG-sWf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PsE-vJ-Nsh"/>
+                                </items>
+                            </toolbar>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gC1-6P-PcS">
+                                <rect key="frame" x="168" y="586" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NjY-Hw-6fo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="-528"/>
+        </scene>
+        <!--WelcomeScreenTwo-->
+        <scene sceneID="NPD-YO-Mij">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeScreenTwo" id="UeE-nj-2QH" userLabel="WelcomeScreenTwo" customClass="PageTwo" customModule="My_Mind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jkB-9Q-zGJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Roq-9C-veV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7fz-FX-5Gi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUG-mR-jdY">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qaY-HH-Bob"/>
+                                    <barButtonItem title="Login" id="lxv-wH-xy0">
+                                        <connections>
+                                            <segue destination="zJO-Tu-UtN" kind="show" id="gNG-b0-ebB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dTW-ea-RiP"/>
+                                    <barButtonItem title="Sign Up" id="xVq-E2-jA5">
+                                        <connections>
+                                            <segue destination="VIh-NO-wmk" kind="show" id="JyM-F3-GMc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oUW-Js-VPf"/>
+                                </items>
+                            </toolbar>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="nI1-hH-dvI">
+                                <rect key="frame" x="168" y="586" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsT-Io-Vw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="146"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="zsM-oB-cVa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="zJO-Tu-UtN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87B-yu-TSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1404" y="130"/>
+        </scene>
+        <!--ForumSignUp-->
+        <scene sceneID="lsp-R5-qiu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="ForumSignUp" id="VIh-NO-wmk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJy-31-OXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403" y="183"/>
+        </scene>
+        <!--WelcomeScreenThree-->
+        <scene sceneID="Py3-Wk-zI4">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeScreenThree" id="kXB-uy-dvY" userLabel="WelcomeScreenThree" customClass="PageThree" customModule="My_Mind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XeO-d9-u1O"/>
+                        <viewControllerLayoutGuide type="bottom" id="sRI-vU-uft"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U75-F3-ca7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-CT-CkQ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="a3c-fd-9VS"/>
+                                    <barButtonItem title="Login" id="suf-G7-qZc">
+                                        <connections>
+                                            <segue destination="zJO-Tu-UtN" kind="show" id="dbc-Jv-bX9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rBn-uG-pfe"/>
+                                    <barButtonItem title="Sign Up" id="OQX-zS-m6S">
+                                        <connections>
+                                            <segue destination="VIh-NO-wmk" kind="show" id="Whu-TI-mzO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Hkw-LR-JTY"/>
+                                </items>
+                            </toolbar>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="51b-2e-56t">
+                                <rect key="frame" x="168" y="586" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hM2-t8-YAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="810"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vw3-lM-VqB"/>
+        <segue reference="S1r-ZG-sWf"/>
+    </inferredMetricsTieBreakers>
+</document>
