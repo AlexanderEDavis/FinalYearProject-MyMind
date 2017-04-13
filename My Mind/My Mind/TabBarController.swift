@@ -8,13 +8,6 @@
 
 import Foundation
 import UIKit
-import AWSCognitoIdentityProvider
-
-class Interim: UIViewController{
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-}
 
 class MainTabView: UITabBarController{
     override var preferredStatusBarStyle: UIStatusBarStyle {

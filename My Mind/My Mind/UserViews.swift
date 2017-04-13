@@ -6,144 +6,163 @@
 //  Copyright © 2017 Alexander Davis. All rights reserved.
 //
 
+import Foundation
 import UIKit
-import AWSMobileHubHelper
-import AWSCognitoIdentityProvider
+import Firebase
+import FirebaseAuth
 
 class LoginView: UIViewController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    @IBOutlet weak var anchorView: UIView!
-    
-    @IBOutlet weak var customProviderButton: UIButton!
-    @IBOutlet weak var customCreateAccountButton: UIButton!
-    @IBOutlet weak var customForgotPasswordButton: UIButton!
-    @IBOutlet weak var customUserIdField: UITextField!
-    @IBOutlet weak var customPasswordField: UITextField!
-    @IBOutlet weak var leftHorizontalBar: UIView!
-    @IBOutlet weak var rightHorizontalBar: UIView!
-    @IBOutlet weak var orSignInWithLabel: UIView!
-    
-    var didSignInObserver: AnyObject!
-    
-    var passwordAuthenticationCompletion: AWSTaskCompletionSource<AnyObject>?
-    
-    // MARK: - View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("Sign In Loading.")
-        
-        
-        didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn,
-                                                                    object: AWSIdentityManager.default(),
-                                                                    queue: OperationQueue.main,
-                                                                    using: {(note: Notification) -> Void in
-                                                                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                                                        let viewController = storyboard.instantiateViewController(withIdentifier: "MainController")
-                                                                        //self.present(viewController, animated:true, completion:nil);
-                                                                        self.present(viewController, animated: true, completion:nil);
-                                                                        // perform successful login actions here */
-                                                                        
-        })
-        
-       // NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.default());
-        
-        customProviderButton.addTarget(self, action: #selector(self.handleCustomSignIn), for: .touchUpInside)
-        customCreateAccountButton.addTarget(self, action: #selector(self.handleUserPoolSignUp), for: .touchUpInside)
-        customForgotPasswordButton.addTarget(self, action: #selector(self.handleUserPoolForgotPassword), for: .touchUpInside)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(didSignInObserver)
-    }
-    
-    func dimissController() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func loginSuccess() -> Void {
-        print("success login");
-    }
-    
-    
-    func startNewPasswordRequired() -> AWSCognitoIdentityNewPasswordRequired {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "PwdChange")
-        self.present(viewController, animated: true, completion:nil)
-        return ChangePasswordView.self as! AWSCognitoIdentityNewPasswordRequired;
-    }
-
-    // MARK: - Utility Methods
-    
-    func handleLoginWithSignInProvider(_ signInProvider: AWSSignInProvider) {
-        AWSIdentityManager.default().login(signInProvider: signInProvider, completionHandler: {(result: Any?, error: Error?) in
-            // If no error reported by SignInProvider, discard the sign-in view controller.
-            if error == nil {
-                DispatchQueue.main.async(execute: {
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
-                })
-            }
-            print("result = \(String(describing: result)), error = \(String(describing: error))")
-        })
-    }
-    
-    func showErrorDialog(_ loginProviderName: String, withError error: NSError) {
-        print("\(loginProviderName) failed to sign in w/ error: \(error)")
-        let alertController = UIAlertController(title: NSLocalizedString("Sign-in Provider Sign-In Error", comment: "Sign-in error for sign-in failure."), message: NSLocalizedString("\(loginProviderName) failed to sign in w/ error: \(error)", comment: "Sign-in message structure for sign-in failure."), preferredStyle: .alert)
-        let doneAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Label to cancel sign-in failure."), style: .cancel, handler: nil)
-        alertController.addAction(doneAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: - IBActions
-    
-    
-}
-
-class ChangePasswordView: UIViewController{
-    var newPasswordCompletion: AWSTaskCompletionSource<AWSCognitoIdentityNewPasswordRequiredDetails>?
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-}
-
-extension ChangePasswordView: AWSCognitoIdentityNewPasswordRequired {
-    func getNewPasswordDetails(_ newPasswordRequiredInput: AWSCognitoIdentityNewPasswordRequiredInput, newPasswordRequiredCompletionSource:
-        AWSTaskCompletionSource<AWSCognitoIdentityNewPasswordRequiredDetails>) {
-        self.newPasswordCompletion = newPasswordRequiredCompletionSource
-    }
-    
-    func didCompleteNewPasswordStepWithError(_ error: Error?) {
-        if let error = error as NSError? {
-            // Handle error
+    @IBOutlet weak var Emailtbx: UITextField!
+    @IBOutlet weak var Passwordtbx: UITextField!
+    @IBAction func Loginbtn(_ sender: UIButton) {
+        if self.Emailtbx.text == "" || self.Passwordtbx.text == "" {
+            
+            //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
+            
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
         } else {
-            // Handle success, in my case simply dismiss the view controller
-            self.dismiss(animated: true, completion: nil)
+            
+            FIRAuth.auth()?.signIn(withEmail: self.Emailtbx.text!, password: self.Passwordtbx.text!) { (user, error) in
+                
+                if error == nil {
+                    
+                    //Print into the console if successfully logged in
+                    print("You have successfully logged in")
+                    
+                    //Go to the MainController if the login is sucessful
+                    let alertController = UIAlertController(title: "Welcome", message: "You have successfully logged in", preferredStyle: .alert)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainController")
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: { action in self.present(vc!, animated: true, completion: nil);})
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    //Tells the user that there is an error and then gets firebase to tell them the error
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
         }
     }
     
-}
-
-class AccountSettings: UIViewController{
-    @IBAction func Logout(_ sender: UIButton) {
-        let pool = AWSCognitoIdentityUserPool(forKey: "UserPool")
-        let user = pool.currentUser()
-        user?.signOut()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "OnBoard")
-        //self.present(viewController, animated:true, completion:nil);
-        self.present(viewController, animated: true, completion:nil);
-    }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+ }
+
+class SignUp : UIViewController {
     
+    @IBOutlet weak var Emailtbx: UITextField!
+    @IBOutlet weak var Passwordtbx: UITextField!
+    @IBAction func createAccountbtn(_ sender: UIButton) {
+        if Emailtbx.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        } else {
+            FIRAuth.auth()?.createUser(withEmail: Emailtbx.text!, password: Passwordtbx.text!) { (user, error) in
+                
+                if error == nil {
+                    let alertController = UIAlertController(title: "Sign Up Complete", message: "You have Successfully Signed Up", preferredStyle: .alert)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: { action in self.present(vc!, animated: true, completion: nil);})
+                    alertController.addAction(defaultAction)
+
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+class ForgotPass : UIViewController {
+    
+    @IBOutlet weak var Emailtbx: UITextField!
+    @IBAction func Resetbtn(_ sender: UIButton) {
+        if self.Emailtbx.text == "" {
+            let alertController = UIAlertController(title: "Oops!", message: "Please enter an email.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        } else {
+            FIRAuth.auth()?.sendPasswordReset(withEmail: self.Emailtbx.text!, completion: { (error) in
+                
+                var title = ""
+                var message = ""
+                
+                if error != nil {
+                    title = "Error!"
+                    message = (error?.localizedDescription)!
+                } else {
+                    title = "Success!"
+                    message = "Password reset email sent."
+                    self.Emailtbx.text = ""
+                }
+                
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in self.present(vc!, animated: true, completion: nil);})
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            })
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+class Logout : UIViewController {
+    
+    @IBAction func Logoutbtn(_ sender: UIButton) {
+        if FIRAuth.auth()?.currentUser != nil {
+            do {
+                try FIRAuth.auth()?.signOut()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoard")
+                present(vc, animated: true, completion: nil)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

@@ -20,9 +20,33 @@ class ForumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let url = NSURL (string: "https://www.mymindforum.com");
-        let requestObj = NSURLRequest(url: url! as URL);
-        webView.loadRequest(requestObj as URLRequest);
+        let url = URL (string: "https://www.mymindforum.com");
+        let requestObj = URLRequest(url: url!);
+        webView.loadRequest(requestObj);
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+class ForumSignUpViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBOutlet weak var ForumSignUp: UIWebView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        let url = URL (string: "https://www.mymindforum.com/ucp.php?mode=register");
+        let requestObj = URLRequest(url: url!);
+        ForumSignUp.loadRequest(requestObj);
     }
     
     override func didReceiveMemoryWarning() {

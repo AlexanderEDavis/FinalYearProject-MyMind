@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F5A1D241E8DB0F300BCE63D"
+               BlueprintIdentifier = "5F387B271E9A77F900308C34"
                BuildableName = "My Mind.app"
                BlueprintName = "My Mind"
                ReferencedContainer = "container:My Mind.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F5A1D381E8DB0F300BCE63D"
+               BlueprintIdentifier = "5F387B3B1E9A77FA00308C34"
                BuildableName = "My MindTests.xctest"
                BlueprintName = "My MindTests"
                ReferencedContainer = "container:My Mind.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F5A1D431E8DB0F300BCE63D"
+               BlueprintIdentifier = "5F387B461E9A77FA00308C34"
                BuildableName = "My MindUITests.xctest"
                BlueprintName = "My MindUITests"
                ReferencedContainer = "container:My Mind.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F5A1D241E8DB0F300BCE63D"
+            BlueprintIdentifier = "5F387B271E9A77F900308C34"
             BuildableName = "My Mind.app"
             BlueprintName = "My Mind"
             ReferencedContainer = "container:My Mind.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F5A1D241E8DB0F300BCE63D"
+            BlueprintIdentifier = "5F387B271E9A77F900308C34"
             BuildableName = "My Mind.app"
             BlueprintName = "My Mind"
             ReferencedContainer = "container:My Mind.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F5A1D241E8DB0F300BCE63D"
+            BlueprintIdentifier = "5F387B271E9A77F900308C34"
             BuildableName = "My Mind.app"
             BlueprintName = "My Mind"
             ReferencedContainer = "container:My Mind.xcodeproj">

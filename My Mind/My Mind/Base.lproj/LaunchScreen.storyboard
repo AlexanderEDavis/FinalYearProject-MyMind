@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GW0-69-bD5">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Crv-dd-76h">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="M8s-fF-QEx">
+        <scene sceneID="qVH-iM-wwt">
             <objects>
-                <viewController id="GW0-69-bD5" sceneMemberID="viewController">
+                <viewController id="Crv-dd-76h" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lMs-dA-kqk"/>
-                        <viewControllerLayoutGuide type="bottom" id="WDo-zS-HHP"/>
+                        <viewControllerLayoutGuide type="top" id="dyd-gr-cRd"/>
+                        <viewControllerLayoutGuide type="bottom" id="clL-So-ApP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ppq-VJ-VDs">
+                    <view key="view" contentMode="scaleToFill" id="ujy-x6-zUj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017 Alexander Davis." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zGC-go-npl">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017 Alexander Davis." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-ae-w9Y">
                                 <rect key="frame" x="20" y="626" width="336" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="nap-1D-EZj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="rbW-5g-91F">
                                 <rect key="frame" x="67" y="42" width="242" height="242"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="iv1-sm-Dbh"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Mind" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Uex-kl-GPa">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Mind" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="8S1-e1-p48">
                                 <rect key="frame" x="20" y="373" width="335" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -41,16 +43,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="zGC-go-npl" secondAttribute="bottom" constant="20" id="58u-0f-xbE"/>
-                            <constraint firstItem="zGC-go-npl" firstAttribute="leading" secondItem="ppq-VJ-VDs" secondAttribute="leading" constant="20" symbolic="YES" id="Adf-Vm-odA"/>
-                            <constraint firstAttribute="centerX" secondItem="zGC-go-npl" secondAttribute="centerX" id="eca-p0-zJE"/>
+                            <constraint firstItem="8S1-e1-p48" firstAttribute="leading" secondItem="ujy-x6-zUj" secondAttribute="leadingMargin" constant="4" id="EO9-oO-Ai5"/>
+                            <constraint firstAttribute="bottom" secondItem="0cs-ae-w9Y" secondAttribute="bottom" constant="20" symbolic="YES" id="GSE-l2-PER"/>
+                            <constraint firstItem="rbW-5g-91F" firstAttribute="centerX" secondItem="ujy-x6-zUj" secondAttribute="centerX" id="PU0-r5-Y4q"/>
+                            <constraint firstItem="rbW-5g-91F" firstAttribute="top" secondItem="dyd-gr-cRd" secondAttribute="bottom" constant="22" id="hbs-cy-llB"/>
+                            <constraint firstItem="8S1-e1-p48" firstAttribute="centerX" secondItem="0cs-ae-w9Y" secondAttribute="centerX" id="iM0-9i-mhf"/>
+                            <constraint firstItem="8S1-e1-p48" firstAttribute="leading" secondItem="0cs-ae-w9Y" secondAttribute="leading" id="snL-XS-J2M"/>
+                            <constraint firstItem="8S1-e1-p48" firstAttribute="top" secondItem="rbW-5g-91F" secondAttribute="bottom" constant="89" id="taj-hb-aAT"/>
+                            <constraint firstItem="rbW-5g-91F" firstAttribute="leading" secondItem="ujy-x6-zUj" secondAttribute="leadingMargin" constant="51" id="wvT-Yi-ZZg"/>
+                            <constraint firstItem="rbW-5g-91F" firstAttribute="centerX" secondItem="8S1-e1-p48" secondAttribute="centerX" id="xwD-Cr-1AI"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ioh-gR-H2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ac4-Ci-SeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>

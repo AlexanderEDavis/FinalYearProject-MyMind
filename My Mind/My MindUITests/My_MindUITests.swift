@@ -2,7 +2,7 @@
 //  My_MindUITests.swift
 //  My MindUITests
 //
-//  Created by Alexander Davis on 30/03/2017.
+//  Created by Alexander Davis on 09/04/2017.
 //  Copyright © 2017 Alexander Davis. All rights reserved.
 //
 

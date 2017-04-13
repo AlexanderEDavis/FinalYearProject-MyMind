@@ -1,0 +1,24 @@
+null{
+  "EmergencyContacts": {
+
+    "saneline": {
+      "name": "SANELINE",
+      "number": "08457678000"
+    },
+
+    "samaritans": {
+      "name": "Samaritans",
+      "number": "08457909090"
+    },
+
+    "fwdthink": {
+      "name": "Forward Thinking Birmingham",
+      "number": "03003000099"
+    },
+
+    "bsmhft": {
+      "name": "Birmingham and Solihull Mental Health Foundation Trust",
+      "number": "01213010000"
+    },
+  }
+}
