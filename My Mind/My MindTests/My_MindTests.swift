@@ -2,7 +2,7 @@
 //  My_MindTests.swift
 //  My MindTests
 //
-//  Created by Alexander Davis on 09/04/2017.
+//  Created by Alexander Davis on 01/05/2017.
 //  Copyright © 2017 Alexander Davis. All rights reserved.
 //
 

@@ -2,11 +2,11 @@
   "commitish" : "1.7",
   "iOS" : [
     {
-      "hash" : "4b56df5067379e0e62b6efe3961c120e1ff4a0a68ca6fd123a2a8dd1743567db",
+      "hash" : "1b042d4b9f79c1a317cdf2d1afcd1ed9430370bf63200ab7e5d4fc2e3d16f650",
       "name" : "SwiftForms"
     }
   ],
-  "xcodeVersion" : "Xcode 8.3.1\nBuild version 8E1000a",
+  "xcodeVersion" : "Xcode 8.3.2\nBuild version 8E2002",
   "watchOS" : [
 
   ],
